@@ -1,0 +1,31 @@
+<br><br>
+<h2>CURSED CARDS' GENERATOR</h2>
+<br><br>
+<table>
+  <tr>
+    <th>Nombre</th>
+    <td>
+      <input type="text" (input)="cambiarNombre($event)">
+    </td>
+  </tr>
+  <tr>
+    <th>Descripción</th>
+    <td>
+      <input type="text" (input)="cambiarDetalle($event)">
+    </td>
+  </tr>
+  <tr>
+    <th>URL de imagen</th>
+    <td>
+      <input type="text" (input)="cambiarImagen($event)">
+    </td>
+  </tr>
+
+</table><br>
+<button class="boton" (click)="guardarHistorial()">Guardar</button><br><br>
+<h3>YOUR CURSED CARDS</h3><br><br>
+<section>
+  <div *ngFor="let carta of elementosGuardados">
+    <app-cursed-card nombre={{carta.nombre}} descripcion={{carta.detalle}} foto={{carta.imagen}}></app-cursed-card>
+  </div>
+</section>
