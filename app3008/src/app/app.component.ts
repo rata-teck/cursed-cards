@@ -33,9 +33,10 @@ export class AppComponent {
     this.nuevoHistorial.detalle = '';
     this.nuevoHistorial.imagen = '';
   }
-  public eliminarCarta(boton:boolean, nombre:string): void{
+  public nombre: string = '';
+  public eliminarCarta(boton:boolean): void{
     if(boton){
-      const objeto = this.elementosGuardados.filter((nombre) => nombre);
+      const objeto = this.elementosGuardados.filter((nombre) => this.nombre);
       const pos = this.elementosGuardados.indexOf(objeto[0]);
       this.elementosGuardados.splice(pos, 1);
     }
