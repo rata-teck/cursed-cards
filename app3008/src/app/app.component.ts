@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { HistoriaImagen } from './modelos/historia-imagen';
 @Component({
   selector: 'app-root',
@@ -33,5 +33,11 @@ export class AppComponent {
     this.nuevoHistorial.detalle = '';
     this.nuevoHistorial.imagen = '';
   }
-
+  public eliminarCarta(boton:boolean, nombre:string): void{
+    if(boton){
+      const objeto = this.elementosGuardados.filter((nombre) => nombre);
+      const pos = this.elementosGuardados.indexOf(objeto[0]);
+      this.elementosGuardados.splice(pos, 1);
+    }
+  }
 }
